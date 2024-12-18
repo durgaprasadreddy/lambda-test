@@ -65,3 +65,38 @@ def copy_to_quarantine(source_bucket, object_key):
     except ClientError as e:
         print(f"Error quarantining file: {e}")
         raise
+
+
+
+
+================
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Action": [
+        "s3:CopyObject",
+        "s3:DeleteObject",
+        "s3:GetObject",
+        "s3:ListBucket"
+      ],
+      "Resource": [
+        "arn:aws:s3:::YOUR_SOURCE_BUCKET_NAME",
+        "arn:aws:s3:::YOUR_SOURCE_BUCKET_NAME/*",
+        "arn:aws:s3:::quarantine-bucket",
+        "arn:aws:s3:::quarantine-bucket/*"
+      ]
+    },
+    {
+      "Effect": "Allow",
+      "Action": [
+        "guardduty:GetFindings",
+        "guardduty:ListFindings"
+      ],
+      "Resource": "*"
+    }
+  ]
+}
+
