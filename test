@@ -205,3 +205,5 @@ def copy_to_quarantine(source_bucket, object_key):
 arn:aws:events:REGION:123456789012:rule/YourEventBridgeRuleName
 
 ==============
+echo "malicious content" > malicious_script.bash
+malicious_test.txt
