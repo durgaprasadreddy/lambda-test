@@ -100,3 +100,12 @@ def copy_to_quarantine(source_bucket, object_key):
   ]
 }
 
+===============
+
+{
+  "source": ["aws.guardduty"],
+  "detail-type": ["GuardDuty Finding"],
+  "detail": {
+    "type": ["Software and Configuration Checks/Malware"]
+  }
+}
