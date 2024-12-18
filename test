@@ -207,3 +207,10 @@ arn:aws:events:REGION:123456789012:rule/YourEventBridgeRuleName
 ==============
 echo "malicious content" > malicious_script.bash
 malicious_test.txt
+
+
+{
+  "source": ["aws.guardduty"],
+  "detail-type": ["GuardDuty Finding"]
+}
+
