@@ -184,3 +184,22 @@ def copy_to_quarantine(source_bucket, object_key):
     except ClientError as e:
         print(f"Error quarantining file: {e}")
         raise
+
+
+===================
+
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Service": "events.amazonaws.com"
+      },
+      "Action": "lambda:InvokeFunction",
+      "Resource": "arn:aws:lambda:REGION:123456789012:function:YourLambdaFunctionName"
+    }
+  ]
+}
+
+==============
